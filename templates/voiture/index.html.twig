@@ -1,0 +1,51 @@
+
+
+
+
+
+
+{% block body %}
+<h2> liste des voitures </h2>
+ 
+ <table>
+                         <thead>
+						    <tr>
+						      <th>Nb_porte</th>
+						      <th>Puissance</th>
+						      <th>Kilometrage</th>
+                              <th>Marque</th>
+                              <th>Type</th>
+                              <th>Personne</th>
+                              <th>action</th>
+						    </tr>
+						  </thead>
+                          <tbody>
+                          {% for voiture in voitures %}
+                          <tr>
+						      
+						      <td>{{ voiture.nbPorte }}</td>
+                              <td>{{ voiture.puissance }}</td>
+                              <td>{{ voiture.kilometrage }}</td>
+                              <td>{{ voiture.marque }}</td>
+                              <td>{{ voiture.type }}</td>
+                              <td>{{ voiture.personne }}</td>
+						     <td>
+                              <ul>
+                              <a href="#"><li>edit</li></a>
+                              <a href="#"><li>delete</li></a>
+                               
+                              </ul>
+                              </td>
+                               
+                             
+                            </tr>
+ 
+                          {% endfor %}
+                      </tbody>
+ 
+        
+   
+   
+   </table> 
+  <a href="#"> <button> ajouter personne</button></a>
+{% endblock %}

@@ -1,0 +1,55 @@
+
+
+
+
+
+
+{% block body %}
+<h2> liste des personnes</h2>
+ 
+ <table>
+                         <thead>
+						    <tr>
+						      <th>nom</th>
+						      <th>date_naissance</th>
+						      <th>cin</th>
+                              <th>voiture</th>
+                              <th>Action</th>
+						    </tr>
+						  </thead>
+                          <tbody>
+                          {% for personne in personnes %}
+                          <tr>
+						      
+						      <td>{{ personne.nom }}</td>
+						      <td>{{ personne.datenaissance|date('d/m/Y') }}</td>
+                              <td>{{ personne.cin }}</td>
+                        <ul> 
+                              <td>
+                              {% for voiture in personne.voiture %}
+                              
+                              <li>{{ voiture.id }}</li>
+                               {% endfor %}
+                               
+						     
+                              <td>
+                              <ul>
+                              
+                              <a href="#"><li>edit</li></a>
+                              <a href="#"><li>delete</li></a>
+                               
+                              </ul>
+                              </td>
+                               
+                             
+                            </tr>
+ 
+                          {% endfor %}
+                      </tbody>
+ 
+        
+   
+   
+   </table> 
+  <a href="#"> <button> ajouter personne</button></a>
+{% endblock %}
